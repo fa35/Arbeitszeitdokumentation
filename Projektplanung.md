@@ -1,4 +1,4 @@
-Gruppennr.: 4
+Gruppennr.: 
 Gruppenmitglieder: Große, Leschke, Neugebauer/ Teamsprecher: 
 Problemstellung: Arbeitszeitdokumentation
 
@@ -8,8 +8,8 @@ Fachkonzept: Michael Große
 Datenhaltung: Philipp Leschke
 
 Zeitrahmen: 
-Meilenstein	       Beschreibung	            Zwischenprodukt	            Datum
-MS-1	           Anforderungsanalyse	        Pflichtenheft	        02.10.2015
+Meilenstein	Beschreibung	Zwischenprodukt	Datum
+MS-1	Anforderungsanalyse	Pflichtenheft	02.10.2015
 			
 			
 			
