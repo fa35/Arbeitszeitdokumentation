@@ -1,20 +1,22 @@
-Gruppennr.: 4?
-Gruppenmitglieder: Große, Leschke, Neugebauer/ Teamsprecher: 
-Problemstellung: Arbeitszeitdokumentation
+- Gruppennr.: 4?
+- Gruppenmitglieder: Große, Leschke, Neugebauer/ Teamsprecher: 
+- Problemstellung: Arbeitszeitdokumentation
 
 
-Zeitrahmen: 
-Meilenstein	           Beschreibung	                 Zwischenprodukt	       Datum
-MS-1	               Anforderungsanalyse	         Pflichtenheft	           02.10.2015
-MS-2			       
-MS-3			       
-MS-4                   
-MS-5                   
-MS-6                   
-MS-7                   
-MS-8                   
-MS-9                   
-MS-10                  
+## Zeitrahmen:
+
+| Meilenstein            | Beschreibung                  | Zwischenprodukt       | Datum      |
+|:---------------------- |:----------------------------- |:--------------------- |:---------- |
+| MS-1                   | Anforderungsanalyse           | Pflichtenheft         | 02.10.2015 |
+|MS-2 ||||
+|MS-3 ||||
+|MS-4 ||||
+|MS-5 ||||
+|MS-6 ||||
+|MS-7 ||||
+|MS-8 ||||
+|MS-9 ||||
+|MS-10 ||||
 
 Datenhaltung 1: Datenbank 
 
