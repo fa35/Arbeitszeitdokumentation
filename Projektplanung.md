@@ -8,15 +8,10 @@
 | Meilenstein            | Beschreibung                  | Zwischenprodukt       | Datum      |
 |:---------------------- |:----------------------------- |:--------------------- |:---------- |
 | MS-1                   | Anforderungsanalyse           | Pflichtenheft         | 02.10.2015 |
-|MS-2 ||||
-|MS-3 ||||
-|MS-4 ||||
-|MS-5 ||||
-|MS-6 ||||
-|MS-7 ||||
-|MS-8 ||||
-|MS-9 ||||
-|MS-10 ||||
+|MS-2                    |Entwicklung 1. Prototyp        |1. Prototyp            | 09.10.2015 |
+|MS-3                    |Ergänzung um fehlende Komponenten|2. Prototyp          |30.10.2015  |
+|MS-4                    |Testphase Prototyp             |                       |20.11.2015  |
+|MS-5                    |Vorführung der Software        |Softwareprodukt        |27.11.2015  |
 
 Datenhaltung 1: Datenbank 
 
@@ -40,9 +35,9 @@ Inhalte der Dokumentation:
 
 Arbeitsaufteilung: 
 
-Neugebauer: Benutzeroberfläche, Pflichtenheft, Testszenarien, Dokumentation
-Große: Fachkonzept, Testszenarien, Dokumentation
-Leschke: Datenhaltung, ER-Modell, Dokumentation
+Neugebauer: Benutzeroberflächen, Pflichtenheft, Testszenarien, Dokumentation
+Große: Fachkonzepte, Testszenarien, Dokumentation
+Leschke: Datenhaltungen, ER-Modell, Dokumentation
 
 Problemstellung: 
 - Arbeitszeitdokumentation
