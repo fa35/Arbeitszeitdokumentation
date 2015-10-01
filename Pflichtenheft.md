@@ -41,3 +41,5 @@ Das Projekt wird in C# programmiert, für das Frontend wird Windows Forms genutz
 |MS-4                    |Testphase Prototyp             |                       |20.11.2015  |
 |MS-5                    |Vorführung der Software        |Softwareprodukt        |27.11.2015  |
 
+## Mockups
+Siehe `mockups` Ordner
