@@ -38,6 +38,7 @@
     <Compile Include="controller.cs" />
     <Compile Include="ControllerInterface.cs" />
     <Compile Include="main.cs" />
+    <Compile Include="model.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

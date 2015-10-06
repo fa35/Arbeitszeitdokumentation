@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Arbeitszeitdokumentation
 {
-    interface IController
+    class model
     {
-        void createWorker(String firstName, String familyName);
     }
 }
