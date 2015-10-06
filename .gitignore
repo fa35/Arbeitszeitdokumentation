@@ -1,3 +1,6 @@
+# binaries
+*.exe
+
 # Visual Studio Files
 Arbeitszeitdokumentation.v12.suo
 
