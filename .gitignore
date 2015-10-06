@@ -3,6 +3,10 @@
 
 # Visual Studio Files
 Arbeitszeitdokumentation.v12.suo
+packages/
+Arbeitszeitdokumentation/bin/
+Arbeitszeitdokumentation/obj/
+
 
 
 # Windows image file caches
