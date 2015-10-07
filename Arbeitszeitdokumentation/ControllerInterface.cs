@@ -8,6 +8,8 @@ namespace Arbeitszeitdokumentation
 {
     interface IController
     {
-        void createWorker(String firstName, String familyName);
+        void CreateWorker(Worker worker);
+
+        List<Worker> GetWorkers();
     }
 }
