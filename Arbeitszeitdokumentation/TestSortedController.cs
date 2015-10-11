@@ -15,7 +15,9 @@ namespace Arbeitszeitdokumentation
             IController sortedController = new SortedController(mokupController);
             var actualResult = sortedController.GetWorkers();
             var expectedResult = new List<Worker> { new Worker("A", "X"), new Worker("B", "X"), new Worker("C", "X") };
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedResult[0].ToString(), actualResult[0].ToString());
+            Assert.AreEqual(expectedResult[1].ToString(), actualResult[1].ToString());
+            Assert.AreEqual(expectedResult[2].ToString(), actualResult[2].ToString());
         }
 
         [Test]
@@ -26,12 +28,9 @@ namespace Arbeitszeitdokumentation
             IController sortedController = new SortedController(mokupController);
             var actualResult = sortedController.GetWorkers();
             var expectedResult = new List<Worker> { new Worker("A", "X"), new Worker("B", "X"), new Worker("C", "X") };
-            var actualFirstWorker = actualResult[0];
-            var expectedFirstWorker = expectedResult[0];
-            Assert.AreEqual(expectedFirstWorker, actualFirstWorker);
-            Assert.AreEqual(expectedResult[0], actualResult[0]);
-            Assert.AreEqual(expectedResult[1], actualResult[1]);
-            Assert.AreEqual(expectedResult[2], actualResult[2]);
+            Assert.AreEqual(expectedResult[0].ToString(), actualResult[0].ToString());
+            Assert.AreEqual(expectedResult[1].ToString(), actualResult[1].ToString());
+            Assert.AreEqual(expectedResult[2].ToString(), actualResult[2].ToString());
         }
     }
 

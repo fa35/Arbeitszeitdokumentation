@@ -12,7 +12,14 @@ namespace Arbeitszeitdokumentation
 
         public override List<Worker> GetWorkers()
         {
-            return Controller.GetWorkers();
+            var result = Controller.GetWorkers();
+            result.Sort(CompareWorkerByLastName);
+            return result;
+        }
+
+        protected int CompareWorkerByLastName(Worker worker1, Worker worker2)
+        {
+            return String.Compare(worker1.LastName, worker2.LastName, StringComparison.CurrentCulture);
         }
     }
 }
