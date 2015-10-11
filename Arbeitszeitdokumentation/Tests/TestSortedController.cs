@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Arbeitszeitdokumentation.Controller;
 using NUnit.Framework;
 
-namespace Arbeitszeitdokumentation
+namespace Arbeitszeitdokumentation.Tests
 {
     [TestFixture]
     class TestSortedController

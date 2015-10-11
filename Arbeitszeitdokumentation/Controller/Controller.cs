@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Arbeitszeitdokumentation
+namespace Arbeitszeitdokumentation.Controller
 {
     /// <summary>
     /// Summary description for Controller

@@ -36,13 +36,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractControllerDecorator.cs" />
-    <Compile Include="controller.cs" />
-    <Compile Include="ControllerInterface.cs" />
+    <Compile Include="Controller\AbstractControllerDecorator.cs" />
+    <Compile Include="Controller\Controller.cs" />
+    <Compile Include="Controller\ControllerInterface.cs" />
+    <Compile Include="Controller\SortedController.cs" />
     <Compile Include="main.cs" />
-    <Compile Include="model.cs" />
-    <Compile Include="SortedController.cs" />
-    <Compile Include="TestSortedController.cs" />
+    <Compile Include="Model\Model.cs" />
+    <Compile Include="Tests\TestSortedController.cs" />
     <Compile Include="worker.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Arbeitszeitdokumentation
+namespace Arbeitszeitdokumentation.Model
 {
-    class model
+    class Model
     {
     }
 }
