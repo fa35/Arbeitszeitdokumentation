@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Arbeitszeitdokumentation.Container;
 
 namespace Arbeitszeitdokumentation.Controller
 {
@@ -10,16 +11,16 @@ namespace Arbeitszeitdokumentation.Controller
     {
         public SortedController(IController controller) : base(controller) { }
 
-        public override List<Worker> GetWorkers()
+        public override List<Employee> GetEmployees()
         {
-            var result = Controller.GetWorkers();
-            result.Sort(CompareWorkerByLastName);
+            var result = Controller.GetEmployees();
+            result.Sort(CompareEmployeeByLastName);
             return result;
         }
 
-        protected int CompareWorkerByLastName(Worker worker1, Worker worker2)
+        protected int CompareEmployeeByLastName(Employee employee1, Employee employee2)
         {
-            return String.Compare(worker1.LastName, worker2.LastName, StringComparison.CurrentCulture);
+            return String.Compare(employee1.LastName, employee2.LastName, StringComparison.CurrentCulture);
         }
     }
 }

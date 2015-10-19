@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Arbeitszeitdokumentation.Container;
 
 namespace Arbeitszeitdokumentation.Controller
 {
@@ -21,14 +22,14 @@ namespace Arbeitszeitdokumentation.Controller
             Controller = controller;
         }
         
-        public void CreateWorker(Worker worker)
+        public void CreateEmployee(Employee employee)
         {
-            Controller.CreateWorker(worker);
+            Controller.CreateEmployee(employee);
         }
 
-        public virtual List<Worker> GetWorkers()
+        public virtual List<Employee> GetEmployees()
         {
-            return Controller.GetWorkers();
+            return Controller.GetEmployees();
         }
     }
 }

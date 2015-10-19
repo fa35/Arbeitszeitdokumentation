@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Arbeitszeitdokumentation
+﻿namespace Arbeitszeitdokumentation.Container
 {
-    public class Worker
+    public class Employee
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         
-        public Worker(string lastName, string firstName)
+        public Employee(string lastName, string firstName)
         {
             LastName = lastName;
             FirstName = firstName;

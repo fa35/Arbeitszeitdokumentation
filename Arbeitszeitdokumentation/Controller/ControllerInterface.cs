@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Arbeitszeitdokumentation.Container;
 
 namespace Arbeitszeitdokumentation.Controller
 {
     interface IController
     {
-        void CreateWorker(Worker worker);
+        void CreateEmployee(Employee employee);
 
-        List<Worker> GetWorkers();
+        List<Employee> GetEmployees();
     }
 }

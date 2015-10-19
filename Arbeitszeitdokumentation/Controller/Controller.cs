@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Arbeitszeitdokumentation.Container;
 
 namespace Arbeitszeitdokumentation.Controller
 {
@@ -15,12 +16,12 @@ namespace Arbeitszeitdokumentation.Controller
             //
         }
 
-        public void CreateWorker(Worker worker)
+        public void CreateEmployee(Employee employee)
         {
             throw new NotImplementedException();
         }
 
-        public List<Worker> GetWorkers()
+        public List<Employee> GetEmployees()
         {
             throw new NotImplementedException();
         }
