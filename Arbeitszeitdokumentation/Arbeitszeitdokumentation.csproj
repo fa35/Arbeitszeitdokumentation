@@ -36,6 +36,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Container\Employee.cs" />
+    <Compile Include="Container\Project.cs" />
+    <Compile Include="Container\Worklog.cs" />
     <Compile Include="Controller\AbstractControllerDecorator.cs" />
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Controller\ControllerInterface.cs" />
@@ -43,7 +46,6 @@
     <Compile Include="main.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Tests\TestSortedController.cs" />
-    <Compile Include="Container\Employee.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">

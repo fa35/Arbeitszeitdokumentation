@@ -4,6 +4,10 @@
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        public string Id { get; set; }
+
+        public string Profession { get; set; }
         
         public Employee(string lastName, string firstName)
         {
@@ -13,7 +17,7 @@
 
         public override string ToString()
         {
-            return string.Format("FirstName: {0}, LastName: {1}", FirstName, LastName);
+            return string.Format("FirstName: {0}, LastName: {1}, Id: {2}, Profession: {3}", FirstName, LastName, Id, Profession);
         }
     }
 }
