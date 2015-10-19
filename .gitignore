@@ -6,7 +6,7 @@ Arbeitszeitdokumentation.v12.suo
 packages/
 Arbeitszeitdokumentation/bin/
 Arbeitszeitdokumentation/obj/
-
+*.sln
 
 
 # Windows image file caches
