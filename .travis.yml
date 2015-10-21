@@ -1,0 +1,8 @@
+language: csharp
+solution: Arbeitszeitdokumentation.sln
+mono:
+  - latest
+script:
+  - xbuild /p:Configuration=Release Arbeitszeitdokumentation.sln
+  - find . -not -path '*/\.*'
+  - mono ./packages/NUnit.Runners.*/tools/nunit-console.exe ./Arbeitszeitdokumentation/bin/Release/nunit.framework.dll
