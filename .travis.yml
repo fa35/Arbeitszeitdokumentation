@@ -5,4 +5,4 @@ mono:
 script:
   - xbuild /p:Configuration=Release Arbeitszeitdokumentation.sln
   - find . -not -path '*/\.*'
-  - mono ./packages/NUnit.Runners.*/tools/nunit-console.exe ./Arbeitszeitdokumentation/bin/Release/nunit.framework.dll
+  - mono ./packages/NUnit.Runners.*/tools/nunit-console.exe ./Arbeitszeitdokumentation.Tests/bin/Release/Arbeitszeitdokumentation.Tests.dll
