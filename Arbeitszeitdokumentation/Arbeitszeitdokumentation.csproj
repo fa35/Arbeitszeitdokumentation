@@ -45,7 +45,6 @@
     <Compile Include="Controller\SortedController.cs" />
     <Compile Include="main.cs" />
     <Compile Include="Model\Model.cs" />
-    <Compile Include="Tests\TestSortedController.cs" />
     <Compile Include="Storage\StorageInterface.cs" />
   </ItemGroup>
   <ItemGroup>
