@@ -7,7 +7,7 @@ using Arbeitszeitdokumentation.Container;
 
 namespace Arbeitszeitdokumentation.Controller
 {
-    interface IController
+    public interface IController
     {
         void CreateEmployee(Employee employee);
 

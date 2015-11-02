@@ -7,7 +7,7 @@ using Arbeitszeitdokumentation.Container;
 
 namespace Arbeitszeitdokumentation.Controller
 {
-    class SortedController : AbstractControllerDecorator
+    public class SortedController : AbstractControllerDecorator
     {
         public SortedController(IController controller) : base(controller) { }
 
