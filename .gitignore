@@ -6,6 +6,8 @@ Arbeitszeitdokumentation.v12.suo
 packages/
 Arbeitszeitdokumentation/bin/
 Arbeitszeitdokumentation/obj/
+Arbeitszeitdokumentation.Tests/bin/
+Arbeitszeitdokumentation.Tests/obj/
 
 
 # Windows image file caches
