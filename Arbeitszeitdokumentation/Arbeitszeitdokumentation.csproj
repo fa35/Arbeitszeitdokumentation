@@ -43,12 +43,47 @@
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Controller\ControllerInterface.cs" />
     <Compile Include="Controller\SortedController.cs" />
-    <Compile Include="main.cs" />
     <Compile Include="Model\Model.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Storage\MockStorage.cs" />
     <Compile Include="Storage\StorageInterface.cs" />
+    <Compile Include="UI\GUI.cs" />
+    <Compile Include="UI\TUI.cs" />
+    <Compile Include="view\Arbeitszeiten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Arbeitszeiten.Designer.cs">
+      <DependentUpon>Arbeitszeiten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\AZD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\AZD.Designer.cs">
+      <DependentUpon>AZD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Mitarbeiter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Mitarbeiter.Designer.cs">
+      <DependentUpon>Mitarbeiter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Projekt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Projekt.Designer.cs">
+      <DependentUpon>Projekt.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="view\AZD.resx">
+      <DependentUpon>AZD.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

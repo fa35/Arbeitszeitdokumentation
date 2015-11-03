@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Arbeitszeitdokumentation.Container;
+using Arbeitszeitdokumentation.Storage;
 
 namespace Arbeitszeitdokumentation.Controller
 {
@@ -12,9 +13,9 @@ namespace Arbeitszeitdokumentation.Controller
         protected IController Controller;
 
 
-        public AbstractControllerDecorator()
+        public AbstractControllerDecorator(IStorage storage)
         {
-            Controller = new Controller();
+            Controller = new Controller(storage);
         }
 
         public AbstractControllerDecorator(IController controller)

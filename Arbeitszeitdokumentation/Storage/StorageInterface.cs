@@ -3,7 +3,7 @@ using Arbeitszeitdokumentation.Container;
 
 namespace Arbeitszeitdokumentation.Storage
 {
-    interface IStorage
+    public interface IStorage
     {
         List<Employee> GetEmployees();
         List<Project> GetProjects();

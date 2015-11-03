@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Arbeitszeitdokumentation.Container;
+using Arbeitszeitdokumentation.Storage;
 
 namespace Arbeitszeitdokumentation.Controller
 {
@@ -9,11 +10,12 @@ namespace Arbeitszeitdokumentation.Controller
     /// </summary>
     public class Controller : IController
     {
-        public Controller()
+
+        private IStorage _storage;
+
+        public Controller(IStorage storage)
         {
-            //
-            // TODO: Add constructor logic here
-            //
+            this._storage = storage;
         }
 
         public void CreateEmployee(Employee employee)
