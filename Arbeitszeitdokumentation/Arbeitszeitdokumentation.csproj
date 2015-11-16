@@ -81,8 +81,17 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="view\Arbeitszeiten.resx">
+      <DependentUpon>Arbeitszeiten.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\AZD.resx">
       <DependentUpon>AZD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Mitarbeiter.resx">
+      <DependentUpon>Mitarbeiter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Projekt.resx">
+      <DependentUpon>Projekt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

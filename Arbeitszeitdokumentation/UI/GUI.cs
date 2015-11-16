@@ -10,7 +10,7 @@ namespace Arbeitszeitdokumentation.UI
         public GUI(IController fachkonzept)
         {
             Form azd = new AZD(fachkonzept);
-            System.Console.WriteLine("Hello");
+            //System.Console.WriteLine("Hello");
             Application.Run(azd);
             this.fachkonzept = fachkonzept;
         }
