@@ -1,4 +1,4 @@
-﻿using Arbeitszeitdokumentation.Controller;
+﻿using Arbeitszeitdokumentation.BusinessLogic;
 using Arbeitszeitdokumentation_v0._1.view;
 using System;
 using System.Windows.Forms;
@@ -7,7 +7,7 @@ namespace Arbeitszeitdokumentation.view
 {
     public partial class AZD : Form
     {
-        public AZD(IController a)
+        public AZD(IBusinessLogic a)
         {
             InitializeComponent();
         }

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Arbeitszeitdokumentation.BusinessLogic;
 using Arbeitszeitdokumentation.Container;
-using Arbeitszeitdokumentation.Controller;
-
 using NUnit.Framework;
 
-namespace Arbeitszeitdokumentation.Tests.Controller
+namespace Arbeitszeitdokumentation.Tests.BusinessLogic
 {
     [TestFixture]
     public class TestSortedController
@@ -17,9 +16,9 @@ namespace Arbeitszeitdokumentation.Tests.Controller
             public void UnsortedList()
             {
                 var unsortedEmployeeList = new List<Employee> { new Employee("A", "X"), new Employee("C", "X"), new Employee("B", "X") };
-                IController mokupController = new ControllerMockup(unsortedEmployeeList);
-                IController sortedController = new SortedController(mokupController);
-                var actualResult = sortedController.GetEmployees();
+                IBusinessLogic mokupProxy = new ProxyMockup(unsortedEmployeeList);
+                IBusinessLogic sortedProxy = new SortedProxy(mokupProxy);
+                var actualResult = sortedProxy.GetEmployees();
                 var expectedResult = new List<Employee> { new Employee("A", "X"), new Employee("B", "X"), new Employee("C", "X") };
                 Assert.AreEqual(expectedResult[0].ToString(), actualResult[0].ToString());
                 Assert.AreEqual(expectedResult[1].ToString(), actualResult[1].ToString());
@@ -30,9 +29,9 @@ namespace Arbeitszeitdokumentation.Tests.Controller
             public void SortedList()
             {
                 var unsortedEmployeeList = new List<Employee> { new Employee("A", "X"), new Employee("B", "X"), new Employee("C", "X") };
-                IController mokupController = new ControllerMockup(unsortedEmployeeList);
-                IController sortedController = new SortedController(mokupController);
-                var actualResult = sortedController.GetEmployees();
+                IBusinessLogic mokupProxy = new ProxyMockup(unsortedEmployeeList);
+                IBusinessLogic sortedProxy = new SortedProxy(mokupProxy);
+                var actualResult = sortedProxy.GetEmployees();
                 var expectedResult = new List<Employee> { new Employee("A", "X"), new Employee("B", "X"), new Employee("C", "X") };
                 Assert.AreEqual(expectedResult[0].ToString(), actualResult[0].ToString());
                 Assert.AreEqual(expectedResult[1].ToString(), actualResult[1].ToString());
@@ -40,9 +39,9 @@ namespace Arbeitszeitdokumentation.Tests.Controller
             }
         }
 
-        class ControllerMockup : IController
+        class ProxyMockup : IBusinessLogic
         {
-            public ControllerMockup(List<Employee> employeeList)
+            public ProxyMockup(List<Employee> employeeList)
             {
                 EmployeeList = employeeList;
             }

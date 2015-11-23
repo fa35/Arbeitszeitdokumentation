@@ -1,13 +1,14 @@
 ﻿using Arbeitszeitdokumentation.view;
-using Arbeitszeitdokumentation.Controller;
+using Arbeitszeitdokumentation.BusinessLogic;
 using System.Windows.Forms;
+
 namespace Arbeitszeitdokumentation.UI
 {
     public class GUI
     {
-        private IController fachkonzept;
+        private IBusinessLogic fachkonzept;
 
-        public GUI(IController fachkonzept)
+        public GUI(IBusinessLogic fachkonzept)
         {
             Form azd = new AZD(fachkonzept);
             //System.Console.WriteLine("Hello");

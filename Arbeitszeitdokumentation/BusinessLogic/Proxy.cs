@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using Arbeitszeitdokumentation.Container;
 using Arbeitszeitdokumentation.Storage;
 
-namespace Arbeitszeitdokumentation.Controller
+namespace Arbeitszeitdokumentation.BusinessLogic
 {
     /// <summary>
-    /// Summary description for Controller
+    /// Summary description for Proxy
     /// </summary>
-    public class Controller : IController
+    public class Proxy : IBusinessLogic
     {
 
         private IStorage _storage;
 
-        public Controller(IStorage storage)
+        public Proxy(IStorage storage)
         {
             this._storage = storage;
         }

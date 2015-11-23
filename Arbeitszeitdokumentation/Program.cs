@@ -1,5 +1,5 @@
 ﻿using Arbeitszeitdokumentation.UI;
-using Arbeitszeitdokumentation.Controller;
+using Arbeitszeitdokumentation.BusinessLogic;
 using Arbeitszeitdokumentation.Storage;
 
 namespace Arbeitszeitdokumentation
@@ -9,7 +9,7 @@ namespace Arbeitszeitdokumentation
         static void Main(string[] args)
         {
 
-            var app = new GUI(new SortedController(new MockStorage()));
+            var app = new GUI(new SortedProxy(new MockStorage()));
 
         }
     }

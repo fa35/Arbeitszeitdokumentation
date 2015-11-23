@@ -1,11 +1,12 @@
-﻿using Arbeitszeitdokumentation.Controller;
+﻿using Arbeitszeitdokumentation.BusinessLogic;
+
 namespace Arbeitszeitdokumentation.UI
 {
     class TUI
     {
-        private IController fachkonzept;
+        private IBusinessLogic fachkonzept;
 
-        public TUI(IController fachkonzept)
+        public TUI(IBusinessLogic fachkonzept)
         {
             this.fachkonzept = fachkonzept;
         }

@@ -39,10 +39,10 @@
     <Compile Include="Container\Employee.cs" />
     <Compile Include="Container\Project.cs" />
     <Compile Include="Container\Worklog.cs" />
-    <Compile Include="Controller\AbstractControllerDecorator.cs" />
-    <Compile Include="Controller\Controller.cs" />
-    <Compile Include="Controller\ControllerInterface.cs" />
-    <Compile Include="Controller\SortedController.cs" />
+    <Compile Include="BusinessLogic\AbstractProxyDecorator.cs" />
+    <Compile Include="BusinessLogic\Proxy.cs" />
+    <Compile Include="BusinessLogic\BusinessLogicInterface.cs" />
+    <Compile Include="BusinessLogic\SortedProxy.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Storage\MockStorage.cs" />

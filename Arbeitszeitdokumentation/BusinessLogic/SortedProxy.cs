@@ -1,23 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Arbeitszeitdokumentation.Container;
 using Arbeitszeitdokumentation.Storage;
 
-namespace Arbeitszeitdokumentation.Controller
+namespace Arbeitszeitdokumentation.BusinessLogic
 {
-    public class SortedController : AbstractControllerDecorator
+    public class SortedProxy : AbstractProxyDecorator
     {
 
-        public SortedController(IStorage storage) : base(storage) { }
+        public SortedProxy(IStorage storage) : base(storage) { }
 
-        public SortedController(IController controller) : base(controller) { }
+        public SortedProxy(IBusinessLogic businessLogic) : base(businessLogic) { }
         
         public override List<Employee> GetEmployees()
         {
-            var result = Controller.GetEmployees();
+            var result = BusinessLogic.GetEmployees();
             result.Sort(CompareEmployeeByLastName);
             return result;
         }
