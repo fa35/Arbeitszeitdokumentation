@@ -28,5 +28,60 @@ namespace Arbeitszeitdokumentation.BusinessLogic
         {
             return BusinessLogic.GetEmployees();
         }
+
+        public List<Project> GetProjects()
+        {
+            return BusinessLogic.GetProjects();
+        }
+
+        public List<Worklog> GetWorklogs()
+        {
+            return BusinessLogic.GetWorklogs();
+        }
+
+        public void AddEmployee(Employee employee)
+        {
+            BusinessLogic.AddEmployee(employee);
+        }
+
+        public void AddProject(Project project)
+        {
+            BusinessLogic.AddProject(project);
+        }
+
+        public void AddWorklog(Worklog worklog)
+        {
+            BusinessLogic.AddWorklog(worklog);
+        }
+
+        public void UpdateEmployee(Employee employee)
+        {
+            BusinessLogic.UpdateEmployee(employee);
+        }
+
+        public void UpdateProject(Project project)
+        {
+            BusinessLogic.UpdateProject(project);
+        }
+
+        public void UpdateWorklog(Worklog worklog)
+        {
+            BusinessLogic.UpdateWorklog(worklog);
+        }
+
+        public void DeleteEmployee(int id)
+        {
+            BusinessLogic.DeleteEmployee(id);
+        }
+
+        public void DeleteProject(int id)
+        {
+            BusinessLogic.DeleteProject(id);
+        }
+
+        public void DeleteWorklog(int id)
+        {
+            BusinessLogic.DeleteWorklog(id);
+        }
     }
 }

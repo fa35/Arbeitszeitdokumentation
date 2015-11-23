@@ -57,6 +57,61 @@ namespace Arbeitszeitdokumentation.Tests.BusinessLogic
             {
                 return EmployeeList;
             }
+
+            public List<Project> GetProjects()
+            {
+                throw new NotImplementedException();
+            }
+
+            public List<Worklog> GetWorklogs()
+            {
+                throw new NotImplementedException();
+            }
+
+            public void AddEmployee(Employee employee)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void AddProject(Project project)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void AddWorklog(Worklog worklog)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void UpdateEmployee(Employee employee)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void UpdateProject(Project project)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void UpdateWorklog(Worklog worklog)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void DeleteEmployee(int id)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void DeleteProject(int id)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void DeleteWorklog(int id)
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }
