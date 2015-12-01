@@ -112,6 +112,7 @@
             this.b18.TabIndex = 8;
             this.b18.Text = "Speichern";
             this.b18.UseVisualStyleBackColor = true;
+            this.b18.Click += new System.EventHandler(this.b18_Click);
             // 
             // b19
             // 

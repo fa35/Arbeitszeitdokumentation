@@ -1,11 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arbeitszeitdokumentation", "Arbeitszeitdokumentation\Arbeitszeitdokumentation.csproj", "{D79E8DCA-F8EB-45E5-A544-0AF3F143FEDF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arbeitszeitdokumentation.Tests", "Arbeitszeitdokumentation.Tests\Arbeitszeitdokumentation.Tests.csproj", "{AC375BDD-B128-487D-AB29-0A541C10CFC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5EDCA8D1-C367-4C8A-BD5D-0E6292D9474D}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

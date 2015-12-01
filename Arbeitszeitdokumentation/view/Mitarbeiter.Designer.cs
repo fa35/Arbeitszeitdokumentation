@@ -46,6 +46,7 @@
             this.b16.TabIndex = 0;
             this.b16.Text = "Speichern";
             this.b16.UseVisualStyleBackColor = true;
+            this.b16.Click += new System.EventHandler(this.b16_Click);
             // 
             // b17
             // 
@@ -74,7 +75,6 @@
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Vorname: ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 

@@ -36,14 +36,14 @@
             this.b8 = new System.Windows.Forms.Button();
             this.b10 = new System.Windows.Forms.Button();
             this.b11 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.GridEmployees = new System.Windows.Forms.DataGridView();
+            this.GridProjects = new System.Windows.Forms.DataGridView();
+            this.GridWorklog = new System.Windows.Forms.DataGridView();
             this.b12 = new System.Windows.Forms.Button();
             this.b13 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridEmployees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridProjects)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridWorklog)).BeginInit();
             this.SuspendLayout();
             // 
             // b1
@@ -54,6 +54,7 @@
             this.b1.TabIndex = 0;
             this.b1.Text = "Mitarbeiter auflisten";
             this.b1.UseVisualStyleBackColor = true;
+            this.b1.Click += new System.EventHandler(this.b1_Click);
             // 
             // b2
             // 
@@ -73,6 +74,7 @@
             this.b4.TabIndex = 4;
             this.b4.Text = "Mitarbeiter löschen";
             this.b4.UseVisualStyleBackColor = true;
+            this.b4.Click += new System.EventHandler(this.b4_Click);
             // 
             // b5
             // 
@@ -92,6 +94,7 @@
             this.b7.TabIndex = 7;
             this.b7.Text = "Projekt löschen";
             this.b7.UseVisualStyleBackColor = true;
+            this.b7.Click += new System.EventHandler(this.b7_Click);
             // 
             // b8
             // 
@@ -111,6 +114,7 @@
             this.b10.TabIndex = 10;
             this.b10.Text = "Arbeitszeiten löschen";
             this.b10.UseVisualStyleBackColor = true;
+            this.b10.Click += new System.EventHandler(this.b10_Click);
             // 
             // b11
             // 
@@ -122,29 +126,47 @@
             this.b11.UseVisualStyleBackColor = true;
             this.b11.Click += new System.EventHandler(this.b11_Click);
             // 
-            // dataGridView1
+            // GridEmployees
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(225, 150);
-            this.dataGridView1.TabIndex = 12;
+            this.GridEmployees.AllowUserToAddRows = false;
+            this.GridEmployees.AllowUserToDeleteRows = false;
+            this.GridEmployees.AllowUserToOrderColumns = true;
+            this.GridEmployees.AllowUserToResizeRows = false;
+            this.GridEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.GridEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridEmployees.Location = new System.Drawing.Point(13, 43);
+            this.GridEmployees.MultiSelect = false;
+            this.GridEmployees.Name = "GridEmployees";
+            this.GridEmployees.ReadOnly = true;
+            this.GridEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridEmployees.Size = new System.Drawing.Size(225, 150);
+            this.GridEmployees.TabIndex = 12;
             // 
-            // dataGridView2
+            // GridProjects
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(265, 43);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(225, 150);
-            this.dataGridView2.TabIndex = 13;
+            this.GridProjects.AllowUserToAddRows = false;
+            this.GridProjects.AllowUserToDeleteRows = false;
+            this.GridProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridProjects.Location = new System.Drawing.Point(265, 43);
+            this.GridProjects.MultiSelect = false;
+            this.GridProjects.Name = "GridProjects";
+            this.GridProjects.ReadOnly = true;
+            this.GridProjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridProjects.Size = new System.Drawing.Size(225, 150);
+            this.GridProjects.TabIndex = 13;
             // 
-            // dataGridView3
+            // GridWorklog
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(512, 43);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(223, 150);
-            this.dataGridView3.TabIndex = 14;
+            this.GridWorklog.AllowUserToAddRows = false;
+            this.GridWorklog.AllowUserToDeleteRows = false;
+            this.GridWorklog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridWorklog.Location = new System.Drawing.Point(512, 43);
+            this.GridWorklog.MultiSelect = false;
+            this.GridWorklog.Name = "GridWorklog";
+            this.GridWorklog.ReadOnly = true;
+            this.GridWorklog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridWorklog.Size = new System.Drawing.Size(223, 150);
+            this.GridWorklog.TabIndex = 14;
             // 
             // b12
             // 
@@ -154,6 +176,7 @@
             this.b12.TabIndex = 15;
             this.b12.Text = "Projekte auflisten";
             this.b12.UseVisualStyleBackColor = true;
+            this.b12.Click += new System.EventHandler(this.b12_Click);
             // 
             // b13
             // 
@@ -163,6 +186,7 @@
             this.b13.TabIndex = 16;
             this.b13.Text = "Arbeitszeiten auflisten";
             this.b13.UseVisualStyleBackColor = true;
+            this.b13.Click += new System.EventHandler(this.b13_Click);
             // 
             // AZD
             // 
@@ -171,9 +195,9 @@
             this.ClientSize = new System.Drawing.Size(749, 302);
             this.Controls.Add(this.b13);
             this.Controls.Add(this.b12);
-            this.Controls.Add(this.dataGridView3);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GridWorklog);
+            this.Controls.Add(this.GridProjects);
+            this.Controls.Add(this.GridEmployees);
             this.Controls.Add(this.b11);
             this.Controls.Add(this.b10);
             this.Controls.Add(this.b8);
@@ -184,9 +208,9 @@
             this.Controls.Add(this.b1);
             this.Name = "AZD";
             this.Text = "AZD";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridEmployees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridProjects)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridWorklog)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,9 +225,9 @@
         private System.Windows.Forms.Button b8;
         private System.Windows.Forms.Button b10;
         private System.Windows.Forms.Button b11;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView GridEmployees;
+        private System.Windows.Forms.DataGridView GridProjects;
+        private System.Windows.Forms.DataGridView GridWorklog;
         private System.Windows.Forms.Button b12;
         private System.Windows.Forms.Button b13;
     }

@@ -8,7 +8,8 @@
         public int Id { get; set; }
 
         public string Profession { get; set; }
-        
+
+        public Employee() {}
         public Employee(string lastName, string firstName)
         {
             LastName = lastName;
