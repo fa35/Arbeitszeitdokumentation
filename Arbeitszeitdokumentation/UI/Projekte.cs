@@ -13,7 +13,7 @@ namespace Arbeitszeitdokumentation.UI
             this.fachkonzept = fachkonzept;
         }
 
-        public void Projekt()
+        public bool Projekt()
         {
             Console.Clear();
             bool zurueck = false;
@@ -34,30 +34,57 @@ namespace Arbeitszeitdokumentation.UI
                         //Logik für AddProject
                         break;
                     case '3':
-                        Console.Clear();
+                        deleteProjekte();
                         //Logik für DeleteProject
                         break;
                     case '4':
                         //Zurück zum Hauptmenue
-                        zurueck = true;
-                        return;
+                        return false;
                     case '5':
                         //beenden der Console
-                        break;
+                        return true;
                     default:
                         Console.Clear();
-                        Console.WriteLine("Dies war keine gültige Eingabe. Bitte geben sie eine Zahl zwischen 1 und 4 ein.");
+                        Console.WriteLine("Dies war keine gültige Eingabe. Bitte geben sie eine Zahl zwischen 1 und 5 ein.");
                         break;
                 }
             } while (zurueck == false);
+            throw new Exception("Fehler in Projektschleife");
         }
+        //ToDo {
+        private void deleteProjekte()
+        {
+            Console.WriteLine("Welchen Eintrag möchten sie löschen? Bitte geben sie die Id an.");
+            var tmp = Console.ReadLine();
+            bool projectIdCorrect;
+            int Id;
+            if (projectIdCorrect = int.TryParse(tmp, out Id))
+            {
+                try
+                {
+                    fachkonzept.DeleteProject(Id);
+                    Console.Clear();
+                    Console.WriteLine("Projekteintrag mit der ID " + Id + " erfolgreich gelöscht.\n");
+                }catch (ArgumentException e)
+                    {
+                        Console.WriteLine("Es gibt keinen Eintrag mit ID "+Id+"!\n");
+                }
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Falsche Eingabe. Bitte erneut eingeben.\n");
+            }
+
+        }//}
 
         private void printProjekte()
         {
             var projectList = fachkonzept.GetProjects();
 
             foreach (Project ProjektElement in projectList)
-            { 
+            {
+                Console.WriteLine("Id: \t"+ProjektElement.Id);
             Console.WriteLine("Bezeichnung: \t"+ProjektElement.Title);
             Console.WriteLine("Ort: \t"+ProjektElement.Location);
             Console.WriteLine("Start: \t"+ProjektElement.Start);

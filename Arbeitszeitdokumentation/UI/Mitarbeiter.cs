@@ -12,8 +12,8 @@ namespace Arbeitszeitdokumentation.UI
         {
             this.fachkonzept = fachkonzept;
         }
-        
-        public void Mmitarbeiter()
+
+        public bool Mmitarbeiter()
         {
             Console.Clear();
             bool zurueck = false;
@@ -29,28 +29,55 @@ namespace Arbeitszeitdokumentation.UI
                         printMitarbeiter();
                         break;
                     case '2':
+                        //Hinzufügen
                         addMitarbeiter();
                         Console.Clear();
-                        //Hinzufügen
                         break;
-                    case'3':
+                    case '3':
                         //Mittwoch
+                        deleteMitarbeiter();
                         //Löschen
                         break;
                     case '4':
                         //Zurück zum Hauptmenue
-                        zurueck = true;
-                        return;
+                        return false;
                     case '5':
                         //beenden der Console
-                        zurueck = true;
-                        break;
+                        return true;
                     default:
                         Console.Clear();
-                        Console.WriteLine("Dies war keine gültige Eingabe. Bitte geben sie eine Zahl zwischen 1 und 4 ein.");
+                        Console.WriteLine("Dies war keine gültige Eingabe. Bitte geben sie eine Zahl zwischen 1 und 5 ein.");
                         break;
                 }
             } while (zurueck == false);
+
+            throw new Exception("Fehler in Mitarbeiterschleife");
+        }
+
+        private void deleteMitarbeiter()
+        {
+            Console.WriteLine("Welchen Eintrag möchten sie löschen? Bitte geben sie die Id an.");
+            var tmp = Console.ReadLine();
+            bool MitarbeiterIdCorrect;
+            int Id;
+            if (MitarbeiterIdCorrect = int.TryParse(tmp, out Id))
+            {
+                try
+                {
+                    fachkonzept.DeleteProject(Id);
+                    Console.Clear();
+                    Console.WriteLine("Projekteintrag mit der ID " + Id + " erfolgreich gelöscht.\n");
+                }
+                catch (ArgumentException e)
+                {
+                    Console.WriteLine("Es gibt keinen Eintrag mit ID " + Id + "!\n");
+                }
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Falsche Eingabe. Bitte erneut eingeben.\n");
+            }
         }
 
         private void printMitarbeiter()
@@ -59,9 +86,10 @@ namespace Arbeitszeitdokumentation.UI
 
             foreach (Employee employeeElement in employeeList)
             {
-                Console.WriteLine("Name: \t"+employeeElement.LastName);
-                Console.WriteLine("Vorname: \t"+employeeElement.FirstName);
-                Console.WriteLine("Beruf: \t"+employeeElement.Profession+"\n");
+                Console.WriteLine("Id: \t" + employeeElement.Id);
+                Console.WriteLine("Name: \t" + employeeElement.LastName);
+                Console.WriteLine("Vorname: \t" + employeeElement.FirstName);
+                Console.WriteLine("Beruf: \t" + employeeElement.Profession + "\n");
             }
         }
 
@@ -84,7 +112,6 @@ namespace Arbeitszeitdokumentation.UI
 
         void print()
         {
-            Console.Clear();
             Console.WriteLine("Sie haben sich für den Bereich Mitarbeiter entschieden.");
             Console.WriteLine("Was möchten sie tun?");
             Console.WriteLine("1    Mitarbeiter auflisten");

@@ -95,7 +95,7 @@ namespace Arbeitszeitdokumentation.view
         private void b10_Click(object sender, EventArgs e)
         {
             var tmp = this.GridWorklog.CurrentRow.DataBoundItem as Worklog;
-            fachkonzept.DeleteProject(tmp.Id);
+            fachkonzept.DeleteWorklog(tmp.Id);
             this.GridWorklog.DataSource = new List<int>();
             this.GridWorklog.DataSource = fachkonzept.GetWorklogs();
         }

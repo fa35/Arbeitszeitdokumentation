@@ -13,7 +13,7 @@ namespace Arbeitszeitdokumentation.UI
             this.fachkonzept = fachkonzept;
         }
 
-        public void Arbeitszeit()
+        public bool Arbeitszeit()
         {
             Console.Clear();
             bool zurueck = false;
@@ -35,26 +35,52 @@ namespace Arbeitszeitdokumentation.UI
                         break;
                     case '3':
                         //Löschen
-                        Console.Clear();
+                        deleteArbeitszeiten();
                         //Mittwoch
-                        return;
+                        break;
                     case '4':
                         //Zurück zum Hauptmenue
-                        zurueck = true;
-                        return;
+                        return false;
                     case '5':
                         //beenden der Console
-                        zurueck = true;
-                        break;
+                        return true;
                     default:
                         //Fehleingabe
                         Console.Clear();
-                        Console.WriteLine("Dies war keine gültige Eingabe. Bitte geben sie eine Zahl zwischen 1 und 4 ein.\n");
+                        Console.WriteLine("Dies war keine gültige Eingabe. Bitte geben sie eine Zahl zwischen 1 und 5 ein.\n");
                         break;
 
                 }
             } while (zurueck == false);
+            throw new Exception("Fehler in Arbeitszeitenschleife");
         }
+
+        private void deleteArbeitszeiten()
+        {
+            Console.WriteLine("Welchen Eintrag möchten sie löschen? Bitte geben sie die Id an.");
+            var tmp = Console.ReadLine();
+            bool ArbeitszeitenIdCorrect;
+            int Id;
+            if (ArbeitszeitenIdCorrect = int.TryParse(tmp, out Id))
+            {
+                try
+                {
+                    fachkonzept.DeleteWorklog(Id);
+                    Console.Clear();
+                    Console.WriteLine("Projekteintrag mit der ID " + Id + " erfolgreich gelöscht.\n");
+                }
+                catch (ArgumentException e)
+                {
+                    Console.WriteLine("Es gibt keinen Eintrag mit ID " + Id + "!\n");
+                }
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Falsche Eingabe. Bitte erneut eingeben.\n");
+            }
+        }
+
 
         private void printArbeitszeiten()
         {
@@ -64,6 +90,7 @@ namespace Arbeitszeitdokumentation.UI
             {
                 //Console.WriteLine("Ich bin das Project mit der ID {1}, dem Mitarbeiter ID:{3} mit Start:{2} und Ende:{0}\n"
                 //    , worklogElement.ProjectId, worklogElement.EmployeeId, worklogElement.Start, worklogElement.End);
+                Console.WriteLine("Id: \t" + worklogElement.Id);
                 Console.WriteLine("ProjectId: \t" + worklogElement.ProjectId);
                 Console.WriteLine("EmployeeId: \t" + worklogElement.EmployeeId);
                 Console.WriteLine("Start: \t\t" + worklogElement.Start);
@@ -83,7 +110,7 @@ namespace Arbeitszeitdokumentation.UI
             Console.WriteLine("4    Zurück zum Hauptmenue");
             Console.WriteLine("5    Beenden");
             Console.WriteLine("");
-        }       
+        }
 
         void addArbeitszeiten()
         {

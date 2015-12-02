@@ -25,19 +25,19 @@ namespace Arbeitszeitdokumentation.UI
                     case '1':
                         Console.Clear();
                         Mitarbeiter oMitarbeiter = new Mitarbeiter(fachkonzept);
-                        oMitarbeiter.Mmitarbeiter();
-                        zurueck = true;
+                        zurueck = oMitarbeiter.Mmitarbeiter();
+                        //zurueck = true;
                         break;
                     case '2':
                         Console.Clear();
                         Projekte oProjekte = new Projekte(fachkonzept);
-                        oProjekte.Projekt();
-                        zurueck = true;
+                        zurueck = oProjekte.Projekt();
+                        //zurueck = true;
                         break;
                     case '3':
                         Console.Clear();
                         Arbeitszeiten oArbeitszeiten = new Arbeitszeiten(fachkonzept);
-                        oArbeitszeiten.Arbeitszeit();
+                        zurueck = oArbeitszeiten.Arbeitszeit();
                         break;
                     case '4':
                         //Beenden der Console
