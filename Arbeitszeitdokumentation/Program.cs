@@ -9,7 +9,7 @@ namespace Arbeitszeitdokumentation
         static void Main(string[] args)
         {
 
-            var app = new TUI(new SortedProxy(new MockStorage()));
+            var app = new TUI(new SortedBusinessLogic(new MockStorage()));
 
         }
     }

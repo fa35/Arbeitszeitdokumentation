@@ -5,12 +5,12 @@ using Arbeitszeitdokumentation.Storage;
 
 namespace Arbeitszeitdokumentation.BusinessLogic
 {
-    public class SortedProxy : AbstractProxyDecorator
+    public class SortedBusinessLogic : AbstractBusinessLogicDecorator
     {
 
-        public SortedProxy(IStorage storage) : base(storage) { }
+        public SortedBusinessLogic(IStorage storage) : base(storage) { }
 
-        public SortedProxy(IBusinessLogic businessLogic) : base(businessLogic) { }
+        public SortedBusinessLogic(IBusinessLogic businessLogic) : base(businessLogic) { }
         
         public override List<Employee> GetEmployees()
         {

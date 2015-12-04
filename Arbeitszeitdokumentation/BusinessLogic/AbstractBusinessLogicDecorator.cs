@@ -4,17 +4,17 @@ using Arbeitszeitdokumentation.Storage;
 
 namespace Arbeitszeitdokumentation.BusinessLogic
 {
-    public abstract class AbstractProxyDecorator : IBusinessLogic
+    public abstract class AbstractBusinessLogicDecorator : IBusinessLogic
     {
         protected IBusinessLogic BusinessLogic;
 
 
-        public AbstractProxyDecorator(IStorage storage)
+        public AbstractBusinessLogicDecorator(IStorage storage)
         {
             BusinessLogic = new BusinessLogic.Proxy(storage);
         }
 
-        public AbstractProxyDecorator(IBusinessLogic businessLogic)
+        public AbstractBusinessLogicDecorator(IBusinessLogic businessLogic)
         {
             BusinessLogic = businessLogic;
         }

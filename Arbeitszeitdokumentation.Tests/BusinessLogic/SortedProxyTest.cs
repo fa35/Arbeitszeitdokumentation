@@ -17,7 +17,7 @@ namespace Arbeitszeitdokumentation.Tests.BusinessLogic
             {
                 var unsortedEmployeeList = new List<Employee> { new Employee("A", "X"), new Employee("C", "X"), new Employee("B", "X") };
                 IBusinessLogic mokupProxy = new ProxyMockup(unsortedEmployeeList);
-                IBusinessLogic sortedProxy = new SortedProxy(mokupProxy);
+                IBusinessLogic sortedProxy = new SortedBusinessLogic(mokupProxy);
                 var actualResult = sortedProxy.GetEmployees();
                 var expectedResult = new List<Employee> { new Employee("A", "X"), new Employee("B", "X"), new Employee("C", "X") };
                 Assert.AreEqual(expectedResult[0].ToString(), actualResult[0].ToString());
@@ -30,7 +30,7 @@ namespace Arbeitszeitdokumentation.Tests.BusinessLogic
             {
                 var unsortedEmployeeList = new List<Employee> { new Employee("A", "X"), new Employee("B", "X"), new Employee("C", "X") };
                 IBusinessLogic mokupProxy = new ProxyMockup(unsortedEmployeeList);
-                IBusinessLogic sortedProxy = new SortedProxy(mokupProxy);
+                IBusinessLogic sortedProxy = new SortedBusinessLogic(mokupProxy);
                 var actualResult = sortedProxy.GetEmployees();
                 var expectedResult = new List<Employee> { new Employee("A", "X"), new Employee("B", "X"), new Employee("C", "X") };
                 Assert.AreEqual(expectedResult[0].ToString(), actualResult[0].ToString());
