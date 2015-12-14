@@ -7,7 +7,7 @@ using NUnit.Framework;
 namespace Arbeitszeitdokumentation.Tests.BusinessLogic
 {
     [TestFixture]
-    public class TestSortedController
+    public class TestSortedBusinessLogic
     {
 
         public class TheGetEmployeesMethod
