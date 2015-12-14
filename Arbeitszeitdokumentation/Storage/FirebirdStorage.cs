@@ -14,6 +14,7 @@ namespace Arbeitszeitdokumentation.Storage
                                     "DataSource=localhost;" +
                                     "Port=3050;";
 
+        private FbConnection conn;
 
         public FirebirdStorage(string connString)
         {
@@ -26,10 +27,15 @@ namespace Arbeitszeitdokumentation.Storage
             CreateTablesIfNeeded();
         }
 
+        ~FirebirdStorage()
+        {
+            conn.Close();
+        }
+
 
         private void CreateTablesIfNeeded()
         {
-            FbConnection conn = new FbConnection(connString);
+            conn = new FbConnection(connString);
             conn.Open();
 
             { // MITARBEITER
@@ -171,14 +177,10 @@ namespace Arbeitszeitdokumentation.Storage
                 }
             }
 
-            conn.Close();
-
         }
 
         private bool CheckDatabaseObjectExists(string objectName, string type)
         {
-            FbConnection conn = new FbConnection(connString);
-            conn.Open();
             // From http://www.devrace.com/en/fibplus/articles/2325.php
             // and http://www.alberton.info/firebird_sql_meta_info.html
             string sql = "";
@@ -207,15 +209,12 @@ namespace Arbeitszeitdokumentation.Storage
             }
 
             dr.Close();
-            conn.Close();
 
             return exists;
         }
 
         public List<Employee> GetEmployees()
         {
-            FbConnection conn = new FbConnection(connString);
-            conn.Open();
             String sql = "SELECT * FROM MITARBEITER";
             FbCommand com = new FbCommand(sql, conn);
             com.ExecuteNonQuery();
@@ -235,7 +234,6 @@ namespace Arbeitszeitdokumentation.Storage
                 resultsList.Add(employee);
             }
             dr.Close();
-            conn.Close();
 
             return resultsList;
 
@@ -243,8 +241,6 @@ namespace Arbeitszeitdokumentation.Storage
 
         public List<Project> GetProjects()
         {
-            FbConnection conn = new FbConnection(connString);
-            conn.Open();
             String sql = "SELECT * FROM PROJEKTE";
             FbCommand com = new FbCommand(sql, conn);
             com.ExecuteNonQuery();
@@ -268,15 +264,12 @@ namespace Arbeitszeitdokumentation.Storage
                 resultsList.Add(project);
             }
             dr.Close();
-            conn.Close();
 
             return resultsList;
         }
 
         public List<Worklog> GetWorklogs()
         {
-            FbConnection conn = new FbConnection(connString);
-            conn.Open();
             String sql = "SELECT * FROM ARBEITET";
             FbCommand com = new FbCommand(sql, conn);
             com.ExecuteNonQuery();
@@ -300,16 +293,12 @@ namespace Arbeitszeitdokumentation.Storage
                 resultsList.Add(worklog);
             }
             dr.Close();
-            conn.Close();
 
             return resultsList;
         }
 
         public void AddEmployee(Employee employee)
         {
-
-            FbConnection conn = new FbConnection(connString);
-            conn.Open();
             String sql =
                 "INSERT into MITARBEITER(NAME,VORNAME,BERUF) VALUES ('" + 
                 employee.LastName + "','" + 
@@ -320,14 +309,10 @@ namespace Arbeitszeitdokumentation.Storage
             FbDataReader dr = com.ExecuteReader();
             dr.Read();
             dr.Close();
-            conn.Close();
         }
 
         public void AddProject(Project project)
         {
-
-            FbConnection conn = new FbConnection(connString);
-            conn.Open();
             String sql =
                 "INSERT into PROJEKTE(BEZEICHNUNG,VON,BIS,ORT) VALUES ('" + 
                 project.Title + "' , '" + 
@@ -339,14 +324,10 @@ namespace Arbeitszeitdokumentation.Storage
             FbDataReader dr = com.ExecuteReader();
             dr.Read();
             dr.Close();
-            conn.Close();
         }
 
         public void AddWorklog(Worklog worklog)
         {
-
-            FbConnection conn = new FbConnection(connString);
-            conn.Open();
             String sql = "INSERT into Arbeitet(F_PROJEKT_ID, F_MITARBEITER_ID, VON, BIS) VALUES (" +
                 worklog.ProjectId + ", " +
                 worklog.EmployeeId + ", '" + 
@@ -357,7 +338,6 @@ namespace Arbeitszeitdokumentation.Storage
             FbDataReader dr = com.ExecuteReader();
             dr.Read();
             dr.Close();
-            conn.Close();
         }
 
 
@@ -441,9 +421,6 @@ namespace Arbeitszeitdokumentation.Storage
 
         public void DeleteEmployee(int id)
         {
-
-            FbConnection conn = new FbConnection(connString);
-            conn.Open();
             String sql = "DELETE FROM MITARBEITER WHERE P_MITARBEITER_ID = @P_MITARBEITER_ID";
             FbCommand com = new FbCommand(sql, conn);
 
@@ -453,14 +430,10 @@ namespace Arbeitszeitdokumentation.Storage
             FbDataReader dr = com.ExecuteReader();
             dr.Read();
             dr.Close();
-            conn.Close();
         }
 
         public void DeleteProject(int id)
         {
-
-            FbConnection conn = new FbConnection(connString);
-            conn.Open();
             String sql = "DELETE FROM Projekt WHERE P_PROJEKT_ID = @P_PROJEKT_ID";
             FbCommand com = new FbCommand(sql, conn);
 
@@ -470,14 +443,10 @@ namespace Arbeitszeitdokumentation.Storage
             FbDataReader dr = com.ExecuteReader();
             dr.Read();
             dr.Close();
-            conn.Close();
         }
 
         public void DeleteWorklog(int id)
         {
-
-            FbConnection conn = new FbConnection(connString);
-            conn.Open();
             String sql = "DELETE FROM Arbeitet WHERE P_ARBEITET_ID = @P_ARBEITET_ID";
             FbCommand com = new FbCommand(sql, conn);
             com.Parameters.Add("@P_ARBEITET_ID", id);
@@ -486,7 +455,6 @@ namespace Arbeitszeitdokumentation.Storage
             FbDataReader dr = com.ExecuteReader();
             dr.Read();
             dr.Close();
-            conn.Close();
         }
     }
 }
