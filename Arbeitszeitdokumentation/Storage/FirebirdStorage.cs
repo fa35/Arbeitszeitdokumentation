@@ -217,7 +217,6 @@ namespace Arbeitszeitdokumentation.Storage
         {
             String sql = "SELECT * FROM MITARBEITER";
             FbCommand com = new FbCommand(sql, conn);
-            com.ExecuteNonQuery();
             FbDataReader dr = com.ExecuteReader();
             List<Employee> resultsList = new List<Employee>();
             while (dr.Read())
@@ -243,7 +242,6 @@ namespace Arbeitszeitdokumentation.Storage
         {
             String sql = "SELECT * FROM PROJEKTE";
             FbCommand com = new FbCommand(sql, conn);
-            com.ExecuteNonQuery();
             FbDataReader dr = com.ExecuteReader();
             List<Project> resultsList = new List<Project>();
             while (dr.Read())
@@ -272,7 +270,6 @@ namespace Arbeitszeitdokumentation.Storage
         {
             String sql = "SELECT * FROM ARBEITET";
             FbCommand com = new FbCommand(sql, conn);
-            com.ExecuteNonQuery();
             FbDataReader dr = com.ExecuteReader();
             List<Worklog> resultsList = new List<Worklog>();
             while (dr.Read())
