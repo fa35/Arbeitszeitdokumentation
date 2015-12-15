@@ -29,12 +29,12 @@ namespace Arbeitszeitdokumentation.BusinessLogic
             return BusinessLogic.GetEmployees();
         }
 
-        public List<Project> GetProjects()
+        public virtual List<Project> GetProjects()
         {
             return BusinessLogic.GetProjects();
         }
 
-        public List<Worklog> GetWorklogs()
+        public virtual List<Worklog> GetWorklogs()
         {
             return BusinessLogic.GetWorklogs();
         }
