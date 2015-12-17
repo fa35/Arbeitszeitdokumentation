@@ -1,0 +1,454 @@
+<Project>
+  <Name>Arbeitszeitdokumentation</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Klassendiagramm</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>IBusinessLogic</Name>
+        <Access>Public</Access>
+        <Location left="650" top="1193" />
+        <Size width="235" height="214" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">List&lt;Employee&gt; GetEmployees()</Member>
+        <Member type="Method">List&lt;Project&gt; GetProjects()</Member>
+        <Member type="Method">List&lt;Worklog&gt; GetWorklogs()</Member>
+        <Member type="Method">void AddEmployee(Employee employee)</Member>
+        <Member type="Method">void AddProject(Project project)</Member>
+        <Member type="Method">void AddWorklog(Worklog worklog)</Member>
+        <Member type="Method">void DeleteEmployee(int id)</Member>
+        <Member type="Method">void DeleteProject(int id)</Member>
+        <Member type="Method">void DeleteWorklog(int id)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>Proxy</Name>
+        <Access>Public</Access>
+        <Location left="72" top="1463" />
+        <Size width="235" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private IStorage _storage</Member>
+        <Member type="Constructor">public Proxy(IStorage Storage)</Member>
+        <Member type="Method">public List&lt;Employee&gt; GetEmployees()</Member>
+        <Member type="Method">public List&lt;Project&gt; GetProjects()</Member>
+        <Member type="Method">public List&lt;Worklog&gt; GetWorklogs()</Member>
+        <Member type="Method">public void AddEmployee(Employee employee)</Member>
+        <Member type="Method">public void AddProject(Project project)</Member>
+        <Member type="Method">public void AddWorklog(Worklog worklog)</Member>
+        <Member type="Method">public void DeleteEmployee(int id)</Member>
+        <Member type="Method">public void DeleteProject(int id)</Member>
+        <Member type="Method">public void DeleteWorklog(int id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FirebirdStorage</Name>
+        <Access>Public</Access>
+        <Location left="309" top="2475" />
+        <Size width="235" height="315" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private FbConnection conn</Member>
+        <Member type="Constructor">public FirebirdStorage(string connString)</Member>
+        <Member type="Constructor">public FirebirdStorage()</Member>
+        <Member type="Destructor">~FirebirdStorage()</Member>
+        <Member type="Method">private void CreateTablesIfNeeded()</Member>
+        <Member type="Method">public List&lt;Employee&gt; GetEmployees()</Member>
+        <Member type="Method">public List&lt;Project&gt; GetProjects()</Member>
+        <Member type="Method">public List&lt;Worklog&gt; GetWorklogs()</Member>
+        <Member type="Method">public void AddEmployee(Employee employee)</Member>
+        <Member type="Method">public void AddProject(Project project)</Member>
+        <Member type="Method">public void AddWorklog(Worklog worklog)</Member>
+        <Member type="Method">public void DeleteEmployee(int id)</Member>
+        <Member type="Method">public void DeleteProject(int id)</Member>
+        <Member type="Method">public void DeleteWorklog(int id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AbstractBusinessLogicDecorator</Name>
+        <Access>Public</Access>
+        <Location left="679" top="1463" />
+        <Size width="336" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">protected IBusinessLogic BusinessLogic</Member>
+        <Member type="Constructor">protected AbstractBusinessLogicDecorator(IBusinessLogic businessLogic)</Member>
+        <Member type="Method">public virtual List&lt;Employee&gt; GetEmployees()</Member>
+        <Member type="Method">public virtual List&lt;Project&gt; GetProjects()</Member>
+        <Member type="Method">public virtual List&lt;Worklog&gt; GetWorklogs()</Member>
+        <Member type="Method">public void AddEmployee(Employee employee)</Member>
+        <Member type="Method">public void AddProject(Project project)</Member>
+        <Member type="Method">public void AddWorklog(Worklog worklog)</Member>
+        <Member type="Method">public void DeleteEmployee(int id)</Member>
+        <Member type="Method">public void DeleteProject(int id)</Member>
+        <Member type="Method">public void DeleteWorklog(int id)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SortedBusinessLogic</Name>
+        <Access>Public</Access>
+        <Location left="949" top="1772" />
+        <Size width="431" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public override List&lt;Employee&gt; GetEmployees()</Member>
+        <Member type="Method">public override List&lt;Project&gt; GetProjects()</Member>
+        <Member type="Method">protected int CompareEmployeeByLastName(Employee employee1, Employee employee2)</Member>
+        <Member type="Method">protected int CompareProjectByLocation(Project project1, Project project2)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IStorage</Name>
+        <Access>Public</Access>
+        <Location left="608" top="2190" />
+        <Size width="235" height="214" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">List&lt;Employee&gt; GetEmployees()</Member>
+        <Member type="Method">List&lt;Project&gt; GetProjects()</Member>
+        <Member type="Method">List&lt;Worklog&gt; GetWorklogs()</Member>
+        <Member type="Method">void AddEmployee(Employee employee)</Member>
+        <Member type="Method">void AddProject(Project project)</Member>
+        <Member type="Method">void AddWorklog(Worklog worklog)</Member>
+        <Member type="Method">void DeleteEmployee(int id)</Member>
+        <Member type="Method">void DeleteProject(int id)</Member>
+        <Member type="Method">void DeleteWorklog(int id)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>Employee</Name>
+        <Access>Public</Access>
+        <Location left="2352" top="1097" />
+        <Size width="250" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string FirstName</Member>
+        <Member type="Field">public string LastName</Member>
+        <Member type="Field">public int Id</Member>
+        <Member type="Field">public string Profession</Member>
+        <Member type="Constructor">public Employee()</Member>
+        <Member type="Constructor">public Employee(string lastname, string firstName)</Member>
+        <Member type="Method">public override string ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GUI</Name>
+        <Access>Public</Access>
+        <Location left="388" top="479" />
+        <Size width="192" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private IBusinessLogic fachkonzept</Member>
+        <Member type="Constructor">public GUI(IBusinessLogic fachkonzept)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TUI</Name>
+        <Access>Public</Access>
+        <Location left="1096" top="273" />
+        <Size width="191" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private IBusinessLogic fachkonzept</Member>
+        <Member type="Constructor">public TUI(IBusinessLogic fachkonzept)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Hauptmenue</Name>
+        <Access>Public</Access>
+        <Location left="1075" top="49" />
+        <Size width="236" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private IBusinessLogic fachkonzept</Member>
+        <Member type="Constructor">public Hauptmenue(IBusinessLogic fachkonzept)</Member>
+        <Member type="Method">public void Intro()</Member>
+        <Member type="Method">void print()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Mitarbeiter</Name>
+        <Access>Public</Access>
+        <Location left="836" top="273" />
+        <Size width="226" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private IBusinessLogic fachkonzept</Member>
+        <Member type="Constructor">public Mitarbeiter(IBusinessLogic fachkonzept)</Member>
+        <Member type="Method">public bool Mmitarbeiter()</Member>
+        <Member type="Method">public void deleteMitarbeiter()</Member>
+        <Member type="Method">public void printMitarbeiter()</Member>
+        <Member type="Method">public void addMitarbeiter()</Member>
+        <Member type="Method">void print()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Projekte</Name>
+        <Access>Public</Access>
+        <Location left="836" top="49" />
+        <Size width="214" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private IBusinessLogic fachkonzept</Member>
+        <Member type="Constructor">public Projekte(IBusinessLogic fachkonzept)</Member>
+        <Member type="Method">public bool Projekt()</Member>
+        <Member type="Method">private void deleteProjekte()</Member>
+        <Member type="Method">private void printProjekte()</Member>
+        <Member type="Method">private void addProjekte()</Member>
+        <Member type="Method">void print()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Arbeitszeiten</Name>
+        <Access>Public</Access>
+        <Location left="1310" top="273" />
+        <Size width="165" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private IBusinessLogic fachkonzept</Member>
+        <Member type="Constructor">public Arbeitszeiten()</Member>
+        <Member type="Method">public bool Arbeitszeit()</Member>
+        <Member type="Method">private void deleteArbeitszeiten()</Member>
+        <Member type="Method">private void printArbeitszeiten()</Member>
+        <Member type="Method">void print()</Member>
+        <Member type="Method">void addArbeitszeiten()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AZD</Name>
+        <Access>Public</Access>
+        <Location left="29" top="74" />
+        <Size width="304" height="553" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private IBusinessLogic fachkonzept</Member>
+        <Member type="Field">private System.ComponentModel.IContainer components = null</Member>
+        <Member type="Field">private System.Windows.Forms.Button b1</Member>
+        <Member type="Field">private System.Windows.Forms.Button b2</Member>
+        <Member type="Field">private System.Windows.Forms.Button b4</Member>
+        <Member type="Field">private System.Windows.Forms.Button b5</Member>
+        <Member type="Field">private System.Windows.Forms.Button b7</Member>
+        <Member type="Field">private System.Windows.Forms.Button b8</Member>
+        <Member type="Field">private System.Windows.Forms.Button b10</Member>
+        <Member type="Field">private System.Windows.Forms.Button b11</Member>
+        <Member type="Field">private System.Windows.Forms.Button b12</Member>
+        <Member type="Field">private System.Windows.Forms.Button b13</Member>
+        <Member type="Field">private System.Windows.Forms.DataGridView GridEmployees</Member>
+        <Member type="Field">private System.Windows.Forms.DataGridView GridProjects</Member>
+        <Member type="Field">private System.Windows.Forms.DataGridView GridWorklog</Member>
+        <Member type="Constructor">public AZD()</Member>
+        <Member type="Method">private void b1_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void b2_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void b4_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void b5_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void b7_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void b8_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void b10_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void b11_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void b12_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void b13_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">protected override void Dispose(bool disposing)</Member>
+        <Member type="Method">private void InitializeComponent()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Mitarbeiter</Name>
+        <Access>Public</Access>
+        <Location left="29" top="650" />
+        <Size width="304" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Employee Memployee</Member>
+        <Member type="Field">private System.ComponentModel.IContainer components = null</Member>
+        <Member type="Field">private System.Windows.Forms.Button b16</Member>
+        <Member type="Field">private System.Windows.Forms.Button b17</Member>
+        <Member type="Field">private System.Windows.Forms.Label label1</Member>
+        <Member type="Field">private System.Windows.Forms.Label label2</Member>
+        <Member type="Field">private System.Windows.Forms.Label label3</Member>
+        <Member type="Field">private System.Windows.Forms.TextBox textBox1</Member>
+        <Member type="Field">private System.Windows.Forms.TextBox textBox2</Member>
+        <Member type="Field">private System.Windows.Forms.TextBox textBox3</Member>
+        <Member type="Constructor">public Mitarbeiter()</Member>
+        <Member type="Method">private void b17_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void b16_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">protected override void Dispose(bool disposing)</Member>
+        <Member type="Method">private void InitializeComponent()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Arbeitszeiten</Name>
+        <Access>Public</Access>
+        <Location left="388" top="74" />
+        <Size width="304" height="366" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Worklog Wworklog</Member>
+        <Member type="Field">private System.ComponentModel.IContainer components = null</Member>
+        <Member type="Field">private System.Windows.Forms.TextBox tB1</Member>
+        <Member type="Field">private System.Windows.Forms.TextBox tB2</Member>
+        <Member type="Field">private System.Windows.Forms.TextBox tB3</Member>
+        <Member type="Field">private System.Windows.Forms.TextBox tB4</Member>
+        <Member type="Field">private System.Windows.Forms.Button b14</Member>
+        <Member type="Field">private System.Windows.Forms.Button b15</Member>
+        <Member type="Field">private System.Windows.Forms.Label label1</Member>
+        <Member type="Field">private System.Windows.Forms.Label label2</Member>
+        <Member type="Field">private System.Windows.Forms.Label label3</Member>
+        <Member type="Field">private System.Windows.Forms.Label label4</Member>
+        <Member type="Constructor">public Arbeitszeiten()</Member>
+        <Member type="Method">private void button2_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void b14_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">protected override void Dispose(bool disposing)</Member>
+        <Member type="Method">private void InitializeComponent()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Projekt</Name>
+        <Access>Public</Access>
+        <Location left="388" top="650" />
+        <Size width="304" height="366" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Project Pproject</Member>
+        <Member type="Field">private System.ComponentModel.IContainer components = null</Member>
+        <Member type="Field">private System.Windows.Forms.Label label1</Member>
+        <Member type="Field">private System.Windows.Forms.Label label2</Member>
+        <Member type="Field">private System.Windows.Forms.Label label3</Member>
+        <Member type="Field">private System.Windows.Forms.Label label4</Member>
+        <Member type="Field">private System.Windows.Forms.TextBox textBox1</Member>
+        <Member type="Field">private System.Windows.Forms.TextBox textBox2</Member>
+        <Member type="Field">private System.Windows.Forms.TextBox textBox3</Member>
+        <Member type="Field">private System.Windows.Forms.TextBox textBox4</Member>
+        <Member type="Field">private System.Windows.Forms.Button b18</Member>
+        <Member type="Field">private System.Windows.Forms.Button b19</Member>
+        <Member type="Constructor">public Projekt()</Member>
+        <Member type="Method">private void b19_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void b18_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">protected override void Dispose(bool disposing)</Member>
+        <Member type="Method">private void InitializeComponent()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Program</Name>
+        <Access>Public</Access>
+        <Location left="2389" top="857" />
+        <Size width="163" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">static void Main(string[] args)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Project</Name>
+        <Access>Public</Access>
+        <Location left="2505" top="1344" />
+        <Size width="163" height="179" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string Title</Member>
+        <Member type="Field">public string Location</Member>
+        <Member type="Field">public string Start</Member>
+        <Member type="Field">public string End</Member>
+        <Member type="Field">public int Id</Member>
+        <Member type="Method">public override string ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Worklog</Name>
+        <Access>Public</Access>
+        <Location left="2292" top="1344" />
+        <Size width="163" height="179" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int EmployeeId</Member>
+        <Member type="Field">public int ProjectId</Member>
+        <Member type="Field">public string Start</Member>
+        <Member type="Field">public string End</Member>
+        <Member type="Field">public int Id</Member>
+        <Member type="Method">public override string ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MockStorage</Name>
+        <Access>Public</Access>
+        <Location left="868" top="2475" />
+        <Size width="299" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;Employee&gt; _employees = new List&lt;Employee&gt;()</Member>
+        <Member type="Field">private List&lt;Project&gt; _projects = new List&lt;Project&gt;()</Member>
+        <Member type="Field">private List&lt;Worklog&gt; _worklogs = new List&lt;Worklog&gt;()</Member>
+        <Member type="Constructor">public MockStorage()</Member>
+        <Member type="Method">public List&lt;Employee&gt; GetEmployees()</Member>
+        <Member type="Method">public List&lt;Project&gt; GetProjects()</Member>
+        <Member type="Method">public List&lt;Worklog&gt; GetWorklogs()</Member>
+        <Member type="Method">public void AddEmployee(Employee employee)</Member>
+        <Member type="Method">public void AddProject(Project project)</Member>
+        <Member type="Method">public void AddWorklog(Worklog worklog)</Member>
+        <Member type="Method">public void DeleteEmployee(int id)</Member>
+        <Member type="Method">public void DeleteProject(int id)</Member>
+        <Member type="Method">public void DeleteWorklog(int id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Realization" first="1" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>606</X>
+          <Y>1354</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="3" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>893</X>
+          <Y>1432</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>930</X>
+          <Y>1340</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="4" second="3">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>822</X>
+          <Y>1754</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="3" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>801</X>
+          <Y>1434</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Realization" first="2" second="5">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>580</X>
+          <Y>2364</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="7" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>363</X>
+          <Y>554</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="8" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>925</X>
+          <Y>1232</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Realization" first="20" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>881</X>
+          <Y>2355</Y>
+        </BendPoint>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
