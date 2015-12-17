@@ -23,7 +23,7 @@
       <Entity type="Class">
         <Name>Proxy</Name>
         <Access>Public</Access>
-        <Location left="72" top="1463" />
+        <Location left="334" top="1367" />
         <Size width="235" height="264" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private IStorage _storage</Member>
@@ -42,7 +42,7 @@
       <Entity type="Class">
         <Name>FirebirdStorage</Name>
         <Access>Public</Access>
-        <Location left="309" top="2475" />
+        <Location left="731" top="2627" />
         <Size width="235" height="315" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private FbConnection conn</Member>
@@ -64,7 +64,7 @@
       <Entity type="Class">
         <Name>AbstractBusinessLogicDecorator</Name>
         <Access>Public</Access>
-        <Location left="679" top="1463" />
+        <Location left="632" top="1466" />
         <Size width="336" height="264" />
         <Collapsed>False</Collapsed>
         <Member type="Field">protected IBusinessLogic BusinessLogic</Member>
@@ -83,7 +83,7 @@
       <Entity type="Class">
         <Name>SortedBusinessLogic</Name>
         <Access>Public</Access>
-        <Location left="949" top="1772" />
+        <Location left="632" top="1819" />
         <Size width="431" height="145" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public override List&lt;Employee&gt; GetEmployees()</Member>
@@ -95,7 +95,7 @@
       <Entity type="Interface">
         <Name>IStorage</Name>
         <Access>Public</Access>
-        <Location left="608" top="2190" />
+        <Location left="375" top="2291" />
         <Size width="235" height="214" />
         <Collapsed>False</Collapsed>
         <Member type="Method">List&lt;Employee&gt; GetEmployees()</Member>
@@ -111,7 +111,7 @@
       <Entity type="Class">
         <Name>Employee</Name>
         <Access>Public</Access>
-        <Location left="2352" top="1097" />
+        <Location left="1745" top="1097" />
         <Size width="250" height="196" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public string FirstName</Member>
@@ -312,7 +312,7 @@
       <Entity type="Class">
         <Name>Program</Name>
         <Access>Public</Access>
-        <Location left="2389" top="857" />
+        <Location left="1782" top="857" />
         <Size width="163" height="94" />
         <Collapsed>False</Collapsed>
         <Member type="Method">static void Main(string[] args)</Member>
@@ -321,7 +321,7 @@
       <Entity type="Class">
         <Name>Project</Name>
         <Access>Public</Access>
-        <Location left="2505" top="1344" />
+        <Location left="1898" top="1344" />
         <Size width="163" height="179" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public string Title</Member>
@@ -335,7 +335,7 @@
       <Entity type="Class">
         <Name>Worklog</Name>
         <Access>Public</Access>
-        <Location left="2292" top="1344" />
+        <Location left="1685" top="1344" />
         <Size width="163" height="179" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public int EmployeeId</Member>
@@ -349,7 +349,7 @@
       <Entity type="Class">
         <Name>MockStorage</Name>
         <Access>Public</Access>
-        <Location left="868" top="2475" />
+        <Location left="731" top="2279" />
         <Size width="299" height="298" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private List&lt;Employee&gt; _employees = new List&lt;Employee&gt;()</Member>
@@ -381,8 +381,8 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>893</X>
-          <Y>1432</Y>
+          <X>846</X>
+          <Y>1435</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
           <X>930</X>
@@ -390,26 +390,38 @@
         </BendPoint>
       </Relationship>
       <Relationship type="Generalization" first="4" second="3">
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Vertical</EndOrientation>
-        <BendPoint relativeToStartShape="False">
-          <X>822</X>
-          <Y>1754</Y>
-        </BendPoint>
-      </Relationship>
-      <Relationship type="Association" first="3" second="0">
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>801</X>
-          <Y>1434</Y>
+          <X>859</X>
+          <Y>1788</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>738</X>
+          <Y>1765</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="3" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>754</X>
+          <Y>1437</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
       </Relationship>
       <Relationship type="Association" first="1" second="5">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
-        <EndOrientation>Vertical</EndOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>346</X>
+          <Y>2334</Y>
+        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
       </Relationship>
@@ -417,11 +429,13 @@
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="False">
-          <X>580</X>
-          <Y>2364</Y>
+          <X>653</X>
+          <Y>2491</Y>
         </BendPoint>
       </Relationship>
       <Relationship type="Association" first="7" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -432,6 +446,8 @@
         <AssociationType>Aggregation</AssociationType>
       </Relationship>
       <Relationship type="Association" first="8" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="False">
@@ -442,11 +458,15 @@
         <AssociationType>Aggregation</AssociationType>
       </Relationship>
       <Relationship type="Realization" first="20" second="5">
-        <StartOrientation>Vertical</StartOrientation>
+        <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>706</X>
+          <Y>2471</Y>
+        </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>881</X>
-          <Y>2355</Y>
+          <X>648</X>
+          <Y>2456</Y>
         </BendPoint>
       </Relationship>
     </Relationships>
