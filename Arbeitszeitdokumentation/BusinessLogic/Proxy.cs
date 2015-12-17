@@ -18,11 +18,6 @@ namespace Arbeitszeitdokumentation.BusinessLogic
             this._storage = storage;
         }
 
-        public void CreateEmployee(Employee employee)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Employee> GetEmployees()
         {
             return _storage.GetEmployees();

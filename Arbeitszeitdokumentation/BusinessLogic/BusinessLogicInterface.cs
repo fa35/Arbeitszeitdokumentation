@@ -5,8 +5,6 @@ namespace Arbeitszeitdokumentation.BusinessLogic
 {
     public interface IBusinessLogic
     {
-        void CreateEmployee(Employee employee);
-
         List<Employee> GetEmployees();
         List<Project> GetProjects();
         List<Worklog> GetWorklogs();

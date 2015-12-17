@@ -19,11 +19,6 @@ namespace Arbeitszeitdokumentation.BusinessLogic
             BusinessLogic = businessLogic;
         }
         
-        public void CreateEmployee(Employee employee)
-        {
-            BusinessLogic.CreateEmployee(employee);
-        }
-
         public virtual List<Employee> GetEmployees()
         {
             return BusinessLogic.GetEmployees();
