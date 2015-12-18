@@ -63,27 +63,27 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(22, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Name:";
+            this.label1.Text = "Last Name:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(22, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Vorname: ";
+            this.label2.Text = "First Name:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(22, 101);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Beruf: ";
+            this.label3.Text = "Profession:";
             // 
             // textBox1
             // 

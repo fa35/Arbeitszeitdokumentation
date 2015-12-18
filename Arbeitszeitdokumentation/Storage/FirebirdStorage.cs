@@ -10,7 +10,7 @@ namespace Arbeitszeitdokumentation.Storage
     {
         private string connString = "User=SYSDBA;" +
                                     "Password=masterkey;" +
-          /*muss angepasst werden*/ "Database=F:\\Berufsschule\\AS\\Arbeitszeitdokumentation\\AS_PROJEKT.FDB;" +
+          /*muss angepasst werden*/ "Database=C:\\Users\\Judith\\Documents\\GitHub\\Arbeitszeitdokumentation\\db\\AS_PROJEKT.FDB;" +
                                     "DataSource=localhost;" +
                                     "Port=3050;";
 
